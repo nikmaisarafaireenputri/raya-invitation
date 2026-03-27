@@ -115,6 +115,97 @@ h1 {
     height: 100px;
 }
 
+/* QR FRAME */
+.qr-frame {
+    margin-top: 15px;
+    display: inline-block;
+    padding: 16px;
+    border-radius: 18px;
+
+    position: relative;
+    overflow: hidden;
+
+    background: rgba(255, 255, 255, 0.10);
+    border: 1px solid rgba(255, 215, 0, 0.4);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+
+    backdrop-filter: blur(10px);
+}
+
+/* QR IMAGE */
+.qr-frame img {
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* TEXT */
+.qr-frame p {
+    margin: 10px 0 0;
+    font-size: 12px;
+    color: #ffd700;
+    position: relative;
+    z-index: 2;
+}
+
+/* 🌙 MOSQUE BACKGROUND LAYER */
+.mosque-layer {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    opacity: 0.5; /* increase visibility */
+    overflow: hidden;
+    pointer-events: none;
+}
+
+/* REALISTIC MOSQUE SILHOUETTE */
+.mosque {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 70%;
+
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    clip-path: polygon(
+        0% 100%, 0% 60%,
+        8% 60%, 12% 45%, 16% 60%,
+        22% 60%, 26% 35%, 30% 60%,
+        38% 60%, 42% 50%, 46% 60%,
+        54% 60%, 58% 40%, 62% 60%,
+        70% 60%, 74% 30%, 78% 60%,
+        86% 60%, 90% 50%, 94% 60%,
+        100% 60%, 100% 100%
+    );
+}
+
+/* CRESCENT IMPROVED */
+.crescent {
+    position: absolute;
+    top: 12px;
+    right: 14px;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #ffd700;
+    box-shadow: 0 0 18px rgba(255, 215, 0, 0.9);
+    animation: glow 2.5s infinite alternate;
+}
+
+/* ✨ ANIMATIONS */
+@keyframes glow {
+    from {
+        transform: scale(1);
+        opacity: 0.7;
+    }
+    to {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+}
+
 /* FOOTER */
 .footer {
     margin-top: 15px;
@@ -166,8 +257,22 @@ h1 {
         📍 View Location
     </a>
 
-    <div class="qr">
+    <!-- <div class="qr">
         <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://maps.app.goo.gl/GAnV44FomMfdQr8Y6">
+    </div> -->
+
+    <div class="qr-frame">
+    
+        <!-- Mosque animation layer -->
+        <div class="mosque-layer">
+            <div class="crescent"></div>
+            <div class="mosque"></div>
+        </div>
+
+        <!-- QR -->
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://maps.app.goo.gl/GAnV44FomMfdQr8Y6">
+
+        <p>Scan to view location</p>
     </div>
 
     <p class="footer">
