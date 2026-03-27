@@ -1,61 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Raya Open House Invitation</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f8f5;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
+<meta charset="UTF-8">
+<title>Raya Open House Invitation</title>
 
-        .card {
-            background-color: #ffffff;
-            border-radius: 15px;
-            padding: 30px;
-            width: 350px;
-            text-align: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
 
-        h1 {
-            color: #2e8b57;
-        }
+<style>
+/* RESET */
+* {
+    box-sizing: border-box;
+}
 
-        .subtitle {
-            font-size: 18px;
-            margin-bottom: 20px;
-        }
+/* BODY */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
 
-        .details {
-            font-size: 16px;
-            margin: 10px 0;
-        }
+    background: 
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url('https://media.istockphoto.com/id/1251013970/vector/eid-mubarak-realistic-crescent-moon-wish-greeting-poster-illustration-vector.jpg?s=612x612&w=0&k=20&c=VOS7xoHyM0uQ5gh3BeqXeaFQNzoOo77sjfC5l4I68ow=');
 
-        .footer {
-            margin-top: 20px;
-            font-style: italic;
-            color: #555;
-        }
-    </style>
+    background-size: cover;
+    background-position: center;
+}
+
+/* GLOW */
+body::before {
+    content: "";
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle, rgba(255,215,0,0.3), transparent);
+    top: 10%;
+    left: 10%;
+    animation: float 6s infinite alternate;
+}
+
+@keyframes float {
+    from { transform: translateY(0); }
+    to { transform: translateY(30px); }
+}
+
+/* CARD */
+.card {
+    backdrop-filter: blur(12px);
+    background: rgba(255,255,255,0.15);
+    border-radius: 20px;
+    padding: 30px 20px;
+    width: 100%;
+    max-width: 360px;
+    text-align: center;
+    color: white;
+    border: 1px solid rgba(255,255,255,0.3);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+
+    animation: fadeIn 1.2s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* TEXT */
+h1 {
+    font-family: 'Playfair Display', serif;
+    color: #ffd700;
+    font-size: 22px;
+}
+
+.subtitle {
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.details {
+    margin: 8px 0;
+    font-size: 14px;
+}
+
+.highlight {
+    color: #ffd700;
+}
+
+/* BUTTON */
+.map-btn {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 10px 16px;
+    background: #ffd700;
+    color: black;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* QR */
+.qr img {
+    margin-top: 12px;
+    width: 100px;
+    height: 100px;
+}
+
+/* FOOTER */
+.footer {
+    margin-top: 15px;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+/* 📱 MOBILE SMALL (extra tuning) */
+@media (max-width: 400px) {
+    h1 {
+        font-size: 20px;
+    }
+
+    .details {
+        font-size: 13px;
+    }
+
+    .map-btn {
+        width: 100%;
+        padding: 12px;
+    }
+
+    .qr img {
+        width: 90px;
+        height: 90px;
+    }
+}</style>
 </head>
+
 <body>
 
-    <div class="card">
-        <h1>🌙 Hari Raya Open House 🌙</h1>
-        <p class="subtitle">You are warmly invited!</p>
+<div class="card">
+    <h1>🌙 Raya Open House ✨</h1>
+    <p class="subtitle">You are warmly invited</p>
 
-        <p class="details"><strong>Host:</strong> Nik Maisara Faireen</p>
-        <p class="details"><strong>Date:</strong> 20 April 2026</p>
-        <p class="details"><strong>Time:</strong> 12:00 PM – 5:00 PM</p>
-        <p class="details"><strong>Location:</strong> Sepang, Selangor</p>
+    <p class="details"><span class="highlight">Date :</span> 18 April 2026</p>
+    <p class="details"><span class="highlight">Time :</span> 12:30 PM</p>
+    <p class="details"><span class="highlight">Location :</span> No.50 Jalan Bukit Indah 3/13 Taman Bukit Indah, 68000 Ampang, Selangor</p>
 
-        <p class="footer">Selamat Hari Raya Aidilfitri ✨</p>
+    <a class="map-btn" href="https://maps.app.goo.gl/GAnV44FomMfdQr8Y6" target="_blank">
+        📍 View Location
+    </a>
+
+    <div class="qr">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://maps.app.goo.gl/GAnV44FomMfdQr8Y6">
     </div>
+
+    <p class="footer">
+        Join us as we celebrate the joy of Syawal with food, laughter, and great company 💚
+    </p>
+</div>
 
 </body>
 </html>
