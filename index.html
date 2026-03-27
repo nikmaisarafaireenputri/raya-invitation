@@ -2,11 +2,13 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Raya Open House Invitation</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
 
 <style>
+
 /* RESET */
 * {
     box-sizing: border-box;
@@ -22,7 +24,9 @@ body {
     align-items: center;
     padding: 20px;
 
-    background: 
+    position: relative;
+
+    background:
         linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
         url('https://media.istockphoto.com/id/1251013970/vector/eid-mubarak-realistic-crescent-moon-wish-greeting-poster-illustration-vector.jpg?s=612x612&w=0&k=20&c=VOS7xoHyM0uQ5gh3BeqXeaFQNzoOo77sjfC5l4I68ow=');
 
@@ -30,7 +34,7 @@ body {
     background-position: center;
 }
 
-/* GLOW */
+/* GLOW EFFECT */
 body::before {
     content: "";
     position: absolute;
@@ -40,6 +44,7 @@ body::before {
     top: 10%;
     left: 10%;
     animation: float 6s infinite alternate;
+    pointer-events: none;
 }
 
 @keyframes float {
@@ -53,8 +58,9 @@ body::before {
     background: rgba(255,255,255,0.15);
     border-radius: 20px;
     padding: 30px 20px;
-    width: 100%;
-    max-width: 360px;
+
+    width: min(92vw, 420px);
+
     text-align: center;
     color: white;
     border: 1px solid rgba(255,255,255,0.3);
@@ -73,6 +79,7 @@ h1 {
     font-family: 'Playfair Display', serif;
     color: #ffd700;
     font-size: 22px;
+    margin-bottom: 10px;
 }
 
 .subtitle {
@@ -115,8 +122,14 @@ h1 {
     line-height: 1.4;
 }
 
-/* 📱 MOBILE SMALL (extra tuning) */
-@media (max-width: 400px) {
+/* 📱 MOBILE OPTIMIZATION */
+@media (max-width: 600px) {
+
+    body {
+        background-position: center top;
+        padding: 16px;
+    }
+
     h1 {
         font-size: 20px;
     }
@@ -134,7 +147,9 @@ h1 {
         width: 90px;
         height: 90px;
     }
-}</style>
+}
+
+</style>
 </head>
 
 <body>
