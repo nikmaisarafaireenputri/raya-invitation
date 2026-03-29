@@ -123,49 +123,6 @@ h1 {
     font-size: 14px;
 }
 
-/* QR */
-.qr img {
-    margin-top: 12px;
-    width: 100px;
-    height: 100px;
-}
-
-/* QR FRAME */
-.qr-frame {
-    margin-top: 15px;
-    display: inline-block;
-    padding: 16px;
-    border-radius: 18px;
-
-    position: relative;
-    overflow: hidden;
-
-    background: rgba(255, 255, 255, 0.10);
-    border: 1px solid rgba(255, 215, 0, 0.4);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
-
-    backdrop-filter: blur(10px);
-}
-
-/* QR IMAGE */
-.qr-frame img {
-    width: 100px;
-    height: 100px;
-    display: block;
-    margin: 0 auto;
-    position: relative;
-    z-index: 2;
-}
-
-/* TEXT */
-.qr-frame p {
-    margin: 10px 0 0;
-    font-size: 12px;
-    color: #ffd700;
-    position: relative;
-    z-index: 2;
-}
-
 /* 🌙 MOSQUE BACKGROUND LAYER */
 .mosque-layer {
     position: absolute;
@@ -275,20 +232,6 @@ h1 {
     <!-- <div class="qr">
         <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://maps.app.goo.gl/GAnV44FomMfdQr8Y6">
     </div> -->
-
-    <div class="qr-frame">
-    
-        <!-- Mosque animation layer -->
-        <div class="mosque-layer">
-            <div class="crescent"></div>
-            <div class="mosque"></div>
-        </div>
-
-        <!-- QR -->
-        <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://maps.app.goo.gl/GAnV44FomMfdQr8Y6">
-
-        <p>Scan to view location</p>
-    </div>
 
     <p class="footer">
         Join us as we celebrate the joy of Syawal with food, laughter, and great company 💚
